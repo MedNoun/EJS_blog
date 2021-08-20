@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %> 
+
+<h1>Home</h1>
+<p><%= first_p %> </p>
+
+<% posts.forEach(function(element){%>
+
+    <h1><%= element.title %> </h1>
+    <% if(element.postBody.length > 100){ %>
+        <p class="post"><%= element.postBody.substring(0,101) %>...<a href=<%="posts/"+element.title%>>read more</a></p>
+    
+    <% }else{ %>
+        <p class="post"><%= element.postBody %> </p>
+    
+    <%}  %> 
+    
+
+<% }); %> 
+<%- include("partials/footer.ejs") %> 
